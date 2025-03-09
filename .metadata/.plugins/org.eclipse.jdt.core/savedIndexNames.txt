@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\aviv1\OneDrive\Desktop\TISPACE\StarQuest\StarQuest\Project\StarQuestAutomation\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3413725848.index
+1067094681.index

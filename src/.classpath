@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="main/java"/>
+	<classpathentry excluding="app/netlify/star_quest/StarQuestAutomation/|app/netlify/star_quest/" kind="src" path="test/java"/>
+	<classpathentry excluding="StarQuestAutomation/" kind="src" path="test/java/app/netlify/star_quest"/>
+	<classpathentry kind="src" path="test/java/app/netlify/star_quest/StarQuestAutomation"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
