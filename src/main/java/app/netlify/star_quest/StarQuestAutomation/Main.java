@@ -1,24 +1,12 @@
 package app.netlify.star_quest.StarQuestAutomation;
 
-import java.time.Duration;
-
+import PageObjects.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import PageObjects.Constants;
-import PageObjects.Dashboard;
-import PageObjects.Dashboard_Tests;
-import PageObjects.Email;
-import PageObjects.Fill_Report;
-import PageObjects.Name;
-import PageObjects.Navigation;
-import PageObjects.Open_Page_Runs;
-import PageObjects.Password;
-import PageObjects.Report_Test;
-import PageObjects.Reports;
-
-import java.util.*;
+import java.time.Duration;
+import java.util.Scanner;
 
 public class Main {
 
