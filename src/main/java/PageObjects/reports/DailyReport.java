@@ -1,16 +1,13 @@
-package PageObjects;
+package PageObjects.reports;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Daily_Report extends Reports {
+public class DailyReport extends Reports {
 
-    public Daily_Report(WebDriver driver) {
-        super(driver);
-        // TODO Auto-generated constructor stub
-    }
 
+    // Filling category
     By Fill_New_Report = By.cssSelector("[class='MuiBox-root css-1et8q24'] [tabindex]");
     By Filling_btn_1 = By.cssSelector(".MuiBox-root.css-1xpddxp > input:nth-of-type(1)");
     By Filling_btn_2 = By.cssSelector(".MuiBox-root.css-1xpddxp > input:nth-of-type(2)");
@@ -18,38 +15,38 @@ public class Daily_Report extends Reports {
     By Filling_btn_4 = By.cssSelector(".MuiBox-root.css-1xpddxp > input:nth-of-type(4)");
     By Filling_btn_5 = By.cssSelector(".MuiBox-root.css-1xpddxp > input:nth-of-type(5)");
 
+    //Wakup category
     By wakeup_time = By.cssSelector("input[name='wakeupTime']");
     By wakeup_bar = By.cssSelector(
             ".MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-root.MuiOutlinedInput-root.css-1vpu30r > div[role='combobox']");
     By AM = By.cssSelector("ul#\\:r2q\\: > li:nth-of-type(1)");
     By PM = By.cssSelector("ul#\\:r2q\\: > li:nth-of-type(2)");
-
     By MorningRoutine = By.cssSelector("input#\\:r2r\\:");
 
+    //Goals category
     By DailyGoal1 = By.cssSelector("input#\\:r2s\\:");
     By DailyGoal2 = By.cssSelector("input#\\:r2t\\:");
     By DailyGoal3 = By.cssSelector("input#\\:r2u\\:");
     By plusbtn = By.cssSelector("[class='MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-6xugel']");
     By DailyGoal4 = By.cssSelector("input#\\:r3g\\:");
-
     By DailyGoal5 = By.cssSelector("input#\\:r3h\\:");
-
-
     By RemoveGoal4 = By.cssSelector("[class] [class='MuiBox-root css-8d5fn0']:nth-of-type(4) [focusable]");
     By RemoveGoal5 = By.cssSelector("[class] [class='MuiBox-root css-8d5fn0']:nth-of-type(5) [focusable]");
+
+    // other category
     By WhatsappCheckbox = By.cssSelector(".PrivateSwitchBase-input.css-1m9pwf3");
-
-
     By Learning_bar = By.cssSelector("div#\\:r2v\\:");
     By Better_me = By.cssSelector(".MuiBox-root.css-2nl3ru div[role='combobox']");
     By Project = By.cssSelector(".MuiBox-root.css-1t3ybnd div[role='combobox']");
     By Product_Refinement = By.cssSelector(".MuiBox-root.css-ms6l7m div[role='combobox']");
     By Technical_sessions = By.cssSelector(".MuiBox-root.css-1t5gx88 div[role='combobox']");
     By Networking = By.cssSelector(".MuiBox-root.css-m91h7y div[role='combobox']");
-
     By Daily_Progress_freetext = By.cssSelector("input#\\:r3b\\:");
     By Submit_btn = By.cssSelector("[action] > [tabindex]");
 
+    public DailyReport(WebDriver driver) {
+        super(driver);
+    }
     public WebElement getLearning_bar() {
         return driver.findElement(Learning_bar);
     }

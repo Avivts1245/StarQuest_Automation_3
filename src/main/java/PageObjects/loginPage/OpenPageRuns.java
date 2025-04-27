@@ -1,15 +1,16 @@
-package PageObjects;
+package PageObjects.loginPage;
 
 import java.time.Duration;
 import java.util.Scanner;
 
+import PageObjects.generalAndNavigation.Constants;
 import org.openqa.selenium.WebDriver;
 
-public class Open_Page_Runs {
+public class OpenPageRuns {
     static WebDriver driver;
     static Scanner input;
 
-    public Open_Page_Runs(WebDriver driver, Scanner input) {
+    public OpenPageRuns(WebDriver driver, Scanner input) {
         this.driver = driver;
         this.input = input;
 
@@ -41,58 +42,44 @@ public class Open_Page_Runs {
     }
 
 
-    public static void LoginTests(Email mail, Password password, LoginPage logpage, LogInCliksTests logtests, Constants constant) {
-//		String strMail= Enter_Mail();
+    public static void LoginTests(LoginPage logpage, LogInCliksTests logtests, Constants constant) {
         String strMail = constant.getMail();
-        TimeOut(driver, 2);
-        mail.MailTests(logpage, strMail);
-        TimeOut(driver, 2);
-//		String strPass= Enter_Password();
+        TimeOut(driver, 4);
         String strPass = constant.getPassword();
-        TimeOut(driver, 2);
-        password.PasswordTests(logpage, strPass);
-        TimeOut(driver, 2);
+        TimeOut(driver, 4);
         logtests.ClickRemember_me_btn(logpage);
-        TimeOut(driver, 2);
+        TimeOut(driver, 4);
         logtests.ClickLogInBnt(logpage);
     }
 
-    public static void Forgot_Password_Tests(Email mail, LoginPage logpage, LogInCliksTests logtests, Forgot_Password_Page fpp) {
+    public static void Forgot_Password_Tests(Constants constant, LoginPage logpage, LogInCliksTests logtests, Forgot_Password_Page fpp) {
         String strMail = Enter_Mail();
         TimeOut(driver, 2);
         TimeOut(driver, 25);
         logtests.ClickForgot_password(logpage);
         TimeOut(driver, 5);
-        mail.MailTests(fpp, strMail);
 //		fpp.getBackToLogin_btn().click();
         fpp.getReset_btn().click();
     }
 
 
-    public static void SignUp_Tests(Email mail, Password password, LoginPage logpage, LogInCliksTests logtests, SignUpPage signpage, Name name) {
+    public static void SignUp_Tests(Constants constant, LoginPage logpage, LogInCliksTests logtests, SignUpPage signpage, Name name) {
 
         TimeOut(driver, 25);
         logtests.ClickSignUp_btn(logpage);
         TimeOut(driver, 25);
-        String strName = Enter_Name();
+
+        name.FirstNameTests(signpage, constant.getFirst_Name());
+
         TimeOut(driver, 2);
-        name.FirstNameTests(signpage, strName);
-        strName = Enter_Name();
-        TimeOut(driver, 2);
-        name.LastNameTests(signpage, strName);
+        name.LastNameTests(signpage,constant.getLast_Name());
         TimeOut(driver, 25);
 
-        String strMail = Enter_Mail();
-        mail.MailTests(signpage, strMail);
-        String strPass = Enter_Password();
-        TimeOut(driver, 2);
-        password.PasswordTests(logpage, strPass);
-        strPass = Enter_Password();
-        password.RetypePassword(signpage, strPass);
-
+        String strMail = constant.getMail();
+        String strPass = constant.getPassword();
         TimeOut(driver, 25);
         signpage.getSignIn_btn().click();
-//		signpage.getLogIn_btn().click();
+
     }
 
 

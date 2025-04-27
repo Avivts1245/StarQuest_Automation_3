@@ -1,4 +1,4 @@
-package PageObjects;
+package PageObjects.reports;
 
 import java.time.Duration;
 
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class Report_Test {
+public class ReportTest {
     WebDriver driver;
     Actions actions;
     int Add_Goals_cnt = 0;
@@ -15,7 +15,7 @@ public class Report_Test {
     static boolean AMPMflag = false;
     static boolean NewReportflag = false;
 
-    public Report_Test(WebDriver driver, Reports reports, Actions actions) {
+    public ReportTest(WebDriver driver, Reports reports, Actions actions) {
         this.driver = driver;
         this.reports = reports;
         this.actions = actions;

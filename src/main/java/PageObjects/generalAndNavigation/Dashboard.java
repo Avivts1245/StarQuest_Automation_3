@@ -1,4 +1,4 @@
-package PageObjects;
+package PageObjects.generalAndNavigation;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,31 +7,21 @@ import org.openqa.selenium.WebElement;
 public class Dashboard {
     WebDriver driver;
 
+   private final By Toolbar = By.cssSelector(".MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-dics6c");
+   private final By DashboardPage = By.cssSelector("[href='\\/']");
+   private final By Reports = By.linkText("Reports");
+   private final By Quest = By.cssSelector("[href='\\/user-quest']");
+   private final By Roadmap = By.cssSelector("[href='\\/user-quest']");
+   private final By LeaderBoard = By.cssSelector("[href='\\/leaderboard']");
+   private final By AdminInvite = By.cssSelector("[href='\\/admin-invite']");
+   private final By Backlog = By.cssSelector("[href='\\/Admin-backlog'] .MuiListItemText-primary");
+   private final By MenteesOverview = By.cssSelector("[href='\\/MenteesOverview'] .MuiListItemText-primary");
+   private final By AdminPosition = By.cssSelector("[href='\\/admin-position'] .MuiListItemText-primary");
+   private final By Settings = By.cssSelector("[href='\\/user-profile']");
+   private final By Logout = By.cssSelector("ul:nth-of-type(2) > li:nth-of-type(2)");
     public Dashboard(WebDriver driver) {
         this.driver = driver;
     }
-
-    By Toolbar = By.cssSelector(
-            ".MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-dics6c");
-    By DashboardPage = By.cssSelector("[href='\\/']");
-    //	By Reports = By.cssSelector("ul:nth-of-type(1) > li:nth-of-type(2)");
-    By Reports = By.linkText("Reports");
-    By Quest = By.cssSelector("[href='\\/user-quest']");
-    By Roadmap = By.cssSelector(
-            "[href='\\/user-quest']");
-    By LeaderBoard = By.cssSelector(
-            "[href='\\/leaderboard']");
-
-    By AdminInvite = By.cssSelector("[href='\\/admin-invite']");
-    By Backlog = By.cssSelector("[href='\\/Admin-backlog'] .MuiListItemText-primary");
-    By MenteesOverview = By.cssSelector("[href='\\/MenteesOverview'] .MuiListItemText-primary");
-    By AdminPosition = By.cssSelector("[href='\\/admin-position'] .MuiListItemText-primary");
-
-    By Settings = By.cssSelector(
-            "[href='\\/user-profile']");
-    By Logout = By.cssSelector(
-            "ul:nth-of-type(2) > li:nth-of-type(2)");
-
 
     public WebElement getToolbar() {
         return driver.findElement(Toolbar);

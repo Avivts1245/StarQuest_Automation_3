@@ -1,36 +1,30 @@
-package PageObjects;
+package PageObjects.reports;
 
 import org.openqa.selenium.WebDriver;
+public class DailyReportsTests {
 
-public class DaylyReportsTests {
-
-    WebDriver driver;
+  private  WebDriver driver;
     static int goalsnum = 3;
 
-    public DaylyReportsTests(WebDriver driver) {
+    public DailyReportsTests(WebDriver driver) {
         this.driver = driver;
 
     }
 
 
-    static Boolean inreportflag = false;
 
-    public static void Fill_new_Report(Daily_Report DReport) {
-//		if (inreportflag)
-//			System.out.println("this Button could not be clicked right now");
-//		else {
+
+    public static void fillNewReport(DailyReport DReport) {
+
 
         DReport.getFill_New_Report().click();
         System.out.println("aaaaaaa");
-//			inreportflag = true;
-//		}
+
     }
 
-    public static void Check_if_you_can_access(boolean inreportflag, Daily_Report DReport) { // check if the script can
-        // reach tests insied
-        // the report
+    public static void checkIfYouCanAccessToTestsInside(boolean inreportflag, DailyReport DReport) { //
         if (!inreportflag)
-            Fill_new_Report(DReport);
+            fillNewReport(DReport);
         else
             System.out.println("cant");
     }
@@ -41,7 +35,7 @@ public class DaylyReportsTests {
 //
 //	}
 
-    public static void Filling_cases(Daily_Report DReport, int num) { // rate cases
+    public static void Filling_cases(DailyReport DReport, int num) { // rate cases
         if (num == 1) {
             DReport.getFilling_btn_1().click();
             return;
@@ -62,7 +56,7 @@ public class DaylyReportsTests {
         DReport.getFilling_btn_3().click();
     }
 
-    public static void WakeUp(Daily_Report DReport, String wakeuptime, boolean morning) {
+    public static void WakeUp(DailyReport DReport, String wakeuptime, boolean morning) {
         DReport.getWakeup_time().sendKeys(wakeuptime);
         DReport.getWakeup_bar().click();
         if (morning)
@@ -71,11 +65,11 @@ public class DaylyReportsTests {
             DReport.getPM().click();
     }
 
-    public static void Morning_rutine(Daily_Report DReport) {
+    public static void Morning_rutine(DailyReport DReport) {
         DReport.getMorningRoutine().sendKeys("abcdef");
     }
 
-    public static void DailyGoals(Daily_Report DReport) {
+    public static void DailyGoals(DailyReport DReport) {
 
 //		boolean flag=true;
         DReport.getDailyGoal1().sendKeys("AAAA");
@@ -88,11 +82,11 @@ public class DaylyReportsTests {
 
     }
 
-    public static void AddGoal(Daily_Report DReport) {
+    public static void AddGoal(DailyReport DReport) {
         DReport.getPlusbtn().click();
     }
 
-    public static void RemoveGoal(Daily_Report DReport, int num) {
+    public static void RemoveGoal(DailyReport DReport, int num) {
         if (num == 4) {
             DReport.getRemoveGoal4().click();
             return;
@@ -100,7 +94,7 @@ public class DaylyReportsTests {
         DReport.getRemoveGoal5().click();
     }
 
-    public static void deletecheck(Daily_Report DReport, int num) {
+    public static void deletecheck(DailyReport DReport, int num) {
         if (goalsnum > 3) {
             RemoveGoal(DReport, num);
             return;
@@ -108,15 +102,15 @@ public class DaylyReportsTests {
         System.out.println("You are requerd to have minimum of 3 goals, you cannot delete this goal");
     }
 
-    public static void Click_on_whatsapp(Daily_Report DReport) {
+    public static void Click_on_whatsapp(DailyReport DReport) {
         DReport.getWhatsappCheckbox().click();
     }
 
-    public static void Daily_Progress(Daily_Report DReport) {
+    public static void Daily_Progress(DailyReport DReport) {
         DReport.getDaily_Progress_freetext().sendKeys("asdfgh");
     }
 
-    public static void Submit(Daily_Report DReport) {
+    public static void Submit(DailyReport DReport) {
         DReport.getSubmit_btn().click();
     }
 

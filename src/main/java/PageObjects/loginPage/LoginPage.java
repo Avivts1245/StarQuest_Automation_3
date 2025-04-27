@@ -1,5 +1,6 @@
-package PageObjects;
+package PageObjects.loginPage;
 
+import PageObjects.generalAndNavigation.WebPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

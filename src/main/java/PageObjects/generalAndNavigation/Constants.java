@@ -1,4 +1,4 @@
-package PageObjects;
+package PageObjects.generalAndNavigation;
 
 import org.openqa.selenium.WebDriver;
 
@@ -8,16 +8,11 @@ public class Constants {
     public Constants() {
 
     }
-
     public String URL = "https://starquest-dev-front-opal.vercel.app/";
-
-
-    //		https://starquest-dev-front-opal.vercel.app
     public String mail = "shaibatonya@gmail.com";
     public String password = "As123456";
     public String first_Name = "Aviv";
     public String last_Name = "Tsoref";
-
 
     public String getURL() {
         return URL;
@@ -39,7 +34,7 @@ public class Constants {
         return last_Name;
     }
 
-    public static void TimeOut(WebDriver driver, int time) {
+    public void timeOut(WebDriver driver, int time) {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
     }
 

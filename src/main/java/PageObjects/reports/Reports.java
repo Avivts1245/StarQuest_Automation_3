@@ -1,25 +1,23 @@
-package PageObjects;
+package PageObjects.reports;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Reports {
-    WebDriver driver;
+   public WebDriver driver;
 
-    public Reports(WebDriver driver) {
-        this.driver = driver;
-    }
 
+    // Reports Main
     By TextBox;
     By Button;
     By Daily = By.cssSelector("[href='\\/daily-reports'] [tabindex]");
     By Weekly = By.cssSelector("[href='\\/weekly-reports'] [tabindex]");
-    ;
+
     By End = By.cssSelector("[href='\\/end-of-day-reports'] [tabindex]");
-    ;
+
     By Fill_New_Report = By.cssSelector("[class='MuiBox-root css-1et8q24'] [tabindex]");
-    ;
+    //	Daily Report Category
     By Rate = By.cssSelector(".MuiBox-root.css-1xpddxp");
     By Morning_routine = By.cssSelector("[name='morningRoutine\\.routine']");
     By Daily_Goal1 = By.cssSelector("[name='dailyGoals\\.0\\.description']");
@@ -52,7 +50,7 @@ public class Reports {
 
     By DragBox = By.cssSelector(".MuiBox-root.css-1ch9toq");
     By FreeFlow30MIN = By.cssSelector("li:nth-of-type(2) > .MuiTouchRipple-root.css-w0pj6f");
-
+    //	Weekly Report Category
     By Weekly_goal1 = By.cssSelector("[name='moodExplanation']");
     By Weekly_goal2 = By.cssSelector("[name='achievedGoals\\.goals\\.0']");
     By Weekly_goal3 = By.cssSelector("[class='MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth MuiTextField-root css-10mjo1']:nth-child(3) [name='significantEvent']");
@@ -76,7 +74,7 @@ public class Reports {
     By Weekly_Challenges3 = By.cssSelector("[action] [class='MuiBox-root css-1v4hn9b']:nth-of-type(8) [name='shareWithMentor']");
     By Weekly_submitBTN = By.cssSelector("[action] [class] [tabindex='0']:nth-child(9)");
 
-
+    //	End Of Day Report Category
     By Overview_yes = By.cssSelector(".css-zcpe9j [name]");
     By Overview_no = By.cssSelector(".Mui-checked [name]");
     By Overview_Goal_achieved = By.cssSelector("[name='dailyGoals\\[0\\]\\.description']");
@@ -98,8 +96,11 @@ public class Reports {
     By FreeFlow = By.cssSelector("[name='shareWithMentor']");
     By SubmitENDBTN = By.cssSelector("[action] [tabindex]");
 
+    public Reports(WebDriver driver) {
+        this.driver = driver;
+    }
 
-    //	Daily
+    //	Daily Report
     public WebElement getFreeFlow30MIN() {
         return driver.findElement(FreeFlow30MIN);
     }
@@ -246,7 +247,7 @@ public class Reports {
     }
 
 
-//	Weekly
+//	Weekly Report
 
     public WebElement getWeekly_goal1() {
         return driver.findElement(Weekly_goal1);
@@ -337,7 +338,7 @@ public class Reports {
     }
 
 
-//	END
+//	END Of Day Report
 
     public WebElement getOverview_yes() {
         return driver.findElement(Overview_yes);
