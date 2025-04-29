@@ -3,116 +3,100 @@ package PageObjects.reports;
 import org.openqa.selenium.WebDriver;
 public class DailyReportsTests {
 
-  private  WebDriver driver;
-    static int goalsnum = 3;
-
-    public DailyReportsTests(WebDriver driver) {
+    private final WebDriver driver;
+    private int numberOfGoals = 3;
+    private dailyReport dailyReport;
+    public DailyReportsTests(WebDriver driver,dailyReport dailyReport) {
         this.driver = driver;
-
+        this.dailyReport= dailyReport;
     }
 
-
-
-
-    public static void fillNewReport(DailyReport DReport) {
-
-
-        DReport.getFill_New_Report().click();
+    public void fillNewReport(dailyReport dailyReport) {
+        this.dailyReport.getFillNewReport().click();
         System.out.println("aaaaaaa");
 
     }
 
-    public static void checkIfYouCanAccessToTestsInside(boolean inreportflag, DailyReport DReport) { //
-        if (!inreportflag)
-            fillNewReport(DReport);
+    public void checkIfYouCanAccessToTestsInside(boolean inReportFlag) { //
+        if (!inReportFlag)
+            fillNewReport(this.dailyReport);
         else
             System.out.println("cant");
     }
 
-//	public static void Rate_Fillings(boolean inreportflag, Daily_Report DReport, int num) {
-//		Check_if_you_can_access(inreportflag, DReport);
-//		Filling_cases(DReport, num);
-//
-//	}
-
-    public static void Filling_cases(DailyReport DReport, int num) { // rate cases
+    public void rateFillingCases(int num) {
         if (num == 1) {
-            DReport.getFilling_btn_1().click();
+            this.dailyReport.getFillingBtn1().click();
             return;
         }
         if (num == 2) {
-            DReport.getFilling_btn_2().click();
+            this.dailyReport.getFillingBtn2().click();
             return;
         }
         if (num == 4) {
-            DReport.getFilling_btn_4().click();
+            this.dailyReport.getFillingBtn4().click();
             return;
         }
         if (num == 5) {
-            DReport.getFilling_btn_5().click();
+            this.dailyReport.getFillingBtn5().click();
             return;
         }
 
-        DReport.getFilling_btn_3().click();
+        this.dailyReport.getFillingBtn3().click();
     }
 
-    public static void WakeUp(DailyReport DReport, String wakeuptime, boolean morning) {
-        DReport.getWakeup_time().sendKeys(wakeuptime);
-        DReport.getWakeup_bar().click();
+    public void WakeUp(String wakeuptime, boolean morning) {
+        this.dailyReport.getWakeupTime().sendKeys(wakeuptime);
+        this.dailyReport.getWakeupBar().click();
         if (morning)
-            DReport.getAM().click();
+            this.dailyReport.getAM().click();
         else
-            DReport.getPM().click();
+            this.dailyReport.getPM().click();
     }
 
-    public static void Morning_rutine(DailyReport DReport) {
-        DReport.getMorningRoutine().sendKeys("abcdef");
+    public void Morning_rutine() {
+        this.dailyReport.getMorningRoutine().sendKeys("abcdef");
     }
 
-    public static void DailyGoals(DailyReport DReport) {
-
-//		boolean flag=true;
-        DReport.getDailyGoal1().sendKeys("AAAA");
-        DReport.getDailyGoal2().sendKeys("BBBB");
-        DReport.getDailyGoal3().sendKeys("CCCC");
-        if (goalsnum < 5) {
-            AddGoal(DReport);
-            goalsnum++;
+    public void DailyGoals() {
+        this.dailyReport.getDailyGoal1().sendKeys("AAAA");
+        this.dailyReport.getDailyGoal2().sendKeys("BBBB");
+        this.dailyReport.getDailyGoal3().sendKeys("CCCC");
+        if (numberOfGoals < 5) {
+            addGoal();
+            this.numberOfGoals++;
         }
-
     }
 
-    public static void AddGoal(DailyReport DReport) {
-        DReport.getPlusbtn().click();
+    public void addGoal() {
+        this.dailyReport.getPlusBtn().click();
     }
 
-    public static void RemoveGoal(DailyReport DReport, int num) {
+    public  void removeGoal( int num) {
         if (num == 4) {
-            DReport.getRemoveGoal4().click();
+            this.dailyReport.getRemoveGoal4().click();
             return;
         }
-        DReport.getRemoveGoal5().click();
+        this.dailyReport.getRemoveGoal5().click();
     }
 
-    public static void deletecheck(DailyReport DReport, int num) {
-        if (goalsnum > 3) {
-            RemoveGoal(DReport, num);
+    public  void deletecheck(int num) {
+        if (numberOfGoals > 3) {
+            removeGoal(num);
             return;
         }
         System.out.println("You are requerd to have minimum of 3 goals, you cannot delete this goal");
     }
 
-    public static void Click_on_whatsapp(DailyReport DReport) {
-        DReport.getWhatsappCheckbox().click();
+    public void clickOnWhatsapp() {
+        this.dailyReport.getWhatsappCheckbox().click();
     }
 
-    public static void Daily_Progress(DailyReport DReport) {
-        DReport.getDaily_Progress_freetext().sendKeys("asdfgh");
+    public void dailyProgress() {
+        this.dailyReport.getDailyProgressFreetext().sendKeys("asdfgh");
     }
 
-    public static void Submit(DailyReport DReport) {
-        DReport.getSubmit_btn().click();
+    public void submit() {
+        this.dailyReport.getSubmitBtn().click();
     }
-
-
 }

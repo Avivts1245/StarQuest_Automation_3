@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Dashboard {
-    WebDriver driver;
+    private final WebDriver driver;
 
    private final By Toolbar = By.cssSelector(".MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.css-dics6c");
    private final By DashboardPage = By.cssSelector("[href='\\/']");
@@ -70,6 +70,4 @@ public class Dashboard {
     public WebElement getAdminPosition() {
         return driver.findElement(AdminPosition);
     }
-
-
 }

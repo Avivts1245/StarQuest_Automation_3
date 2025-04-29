@@ -23,7 +23,6 @@ public class FillReport {
 
     }
 
-
     public void dailyValidation() {
         if (isDailyReport) return;
         this.reports.getDaily().click();
@@ -54,30 +53,30 @@ public class FillReport {
 
     public void fillDaily() {
         dailyValidation();
-        this.reportTest.Fill_New_Report();
+        this.reportTest.fillNewReport();
         this.constant.timeOut(this.driver, 4);
-        this.reportTest.WakeUP_Time();
-        this.reportTest.Morningroutine();
-        this.reportTest.Goal1();
-        this.reportTest.Goal2();
+        this.reportTest.wakeUPTime();
+        this.reportTest.morningRoutine();
+        this.reportTest.goal1();
+        this.reportTest.goal2();
         this.reportTest.Goal3();
-        this.reportTest.AddGoal();
-        this.reportTest.AddGoal();
+        this.reportTest.addGoal();
+        this.reportTest.addGoal();
         this.constant.timeOut(this.driver, 4);
-        this.reportTest.Goal4();
+        this.reportTest.goal4();
         this.reportTest.Goal5();
         this.constant.timeOut(this.driver, 4);
-        this.reportTest.remove_Goal(2);
-        this.reportTest.remove_Goal(1);
-        this.reportTest.Whatsapp();
+        this.reportTest.removeGoalClick(2);
+        this.reportTest.removeGoalClick(1);
+        this.reportTest.whatsapp();
         this.constant.timeOut(this.driver, 4);
-        this.reportTest.whatsapp_PopUp();
-        this.reportTest.DragElement(reports.getMeizamGoal(), reports.getDragBox());
-        this.reportTest.DragElement(reports.getMeizamGoal(), reports.getDragBox());
-        this.reportTest.DragElement(reports.getFreeFlowGoal(), reports.getDragBox());
-        this.reportTest.DragElement(reports.getLinkedIn_session(), reports.getDragBox());
-        this.reportTest.Fill_Progress();
-        this.reportTest.Submit();
+        this.reportTest.whatsappPopUp();
+        this.reportTest.dragElement(reports.getMeizamGoal(), reports.getDragBox());
+        this.reportTest.dragElement(reports.getMeizamGoal(), reports.getDragBox());
+        this.reportTest.dragElement(reports.getFreeFlowGoal(), reports.getDragBox());
+        this.reportTest.dragElement(reports.getLinkedIn_session(), reports.getDragBox());
+        this.reportTest.fillProgress();
+        this.reportTest.submit();
     }
 
     public void fillWeekly() {
